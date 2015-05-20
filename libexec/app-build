@@ -13,7 +13,6 @@ source "$APP_ROOT/libexec/lib.sh"
 main() {
   package=$(get_package)
   version=$(get_version)
-echo 1, $package, $version
 
   # download upstream tarball and extract it.
   uscan --force-download
