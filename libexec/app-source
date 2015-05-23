@@ -11,7 +11,7 @@ set -e
 source "$APP_ROOT/libexec/lib.sh"
 
 main() {
-  debuild -S
+  debuild -i -us -uc -S
 }
 
 main "$@"

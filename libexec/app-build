@@ -21,7 +21,7 @@ main() {
   ln -sf  "$(pwd)/debian" "../${package}-${version}"
   cd "../${package}-${version}"
 
-  debuild -b
+  debuild -i -us -uc -b
 }
 
 main "$@"
