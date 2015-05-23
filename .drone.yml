@@ -1,8 +1,8 @@
-image: gutenye/debian-devel-with-keys
+image: gutenye/debian-devel-with-guten
 script:
   #- '[[ $(git show-ref $(git describe --abbrev=0 --tags)) == $(git rev-parse HEAD) ]] || exit 2'
 
 deploy:
   bash:
     script:
-      - cd misc/deb && gutdeb publish $(cat VERSION)
+      - cd misc/deb && gutdeb publish $(cat ../../VERSION)
