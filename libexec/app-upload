@@ -14,14 +14,15 @@ main() {
   package=$(get_package)
   version=$(get_version)
 
-  aptly repo remove default "$package"
-  aptly repo add default "../${package}_${version}*.deb"
-  aplty publish update debian
+  aptly repo remove default $package
+  aptly repo add default ../${package}_${version}*.deb
+  aptly publish update debian
 
-  cd dist
+  cd ~/.aptly/public
   git add .
   git commit -m "Update at $(date)"
   git push
+  cd "$OLDPWD"
 }
 
 main "$@"

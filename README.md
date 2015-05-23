@@ -11,14 +11,8 @@ $ aptly repo create -distribution=debian default
 $ aptly publish repo default
 ```
 
-**Push to Github**
+**Upload to Github**
 
 ```
-$ ln -s ~/.aptly/public dist
-...
+$ gutdeb upload
 ```
-setup aptly
-
-
-
-
