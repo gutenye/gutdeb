@@ -1,4 +1,5 @@
-image: gutenye/debian-devel-with-guten
+#image: gutenye/debian-devel-with-guten
+image: foo
 script:
   #- '[[ $(git show-ref $(git describe --abbrev=0 --tags)) == $(git rev-parse HEAD) ]] || exit 2'
 cache:
