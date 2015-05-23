@@ -1,0 +1,9 @@
+*.dsc
+*.build
+*.changes
+*.upload
+*.debhelper
+*.debhelper.log
+*.substvars
+*.tar.gz
+*.deb
