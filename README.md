@@ -1,18 +1,4 @@
-Install
---------
+Guten Deb, a debian packaging helper
+=====================================
 
-**Create an APT Repository**
-
-1. [Create a GPG key](http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.1)
-2. Setup a repo
-
-```
-$ aptly repo create -distribution=debian default
-$ aptly publish repo default
-```
-
-**Upload to Github**
-
-```
-$ gutdeb upload
-```
+This is a part of [gutpacaking](https://github.com/gutenye/gutpackaing) project.

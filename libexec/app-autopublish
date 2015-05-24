@@ -12,6 +12,10 @@ source "$APP_ROOT/libexec/lib.sh"
 
 main() {
   for dir in "$@"; do
+    if [[ ! -d "$dir" ]]; then
+      continue
+    fi
+
     if [[ ! -e "$dir/debian/watch" ]]; then
       say "::SKIP:: $dir -- there is no debian/watch file"
       continue

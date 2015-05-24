@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# Summary: Check upstream for new version
+#
+# Usage: gutdeb check
+#
+# It invokes uscan
+
+set -e
+(( $DEBUG >= 3 )) && set -x
+source "$APP_ROOT/libexec/lib.sh"
+
+main() {
+  ret=$(uscan --report) || true
+  if [[ "$ret" =~ Newest\ version\ on\ remote\ site\ is\ ([-_.0-9]+) ]]; then
+    echo ${BASH_REMATCH[1]}
+  else
+    echo ""
+  fi
+}
+
+main "$@"
