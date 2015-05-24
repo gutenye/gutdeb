@@ -15,10 +15,11 @@ main() {
   version=$(get_version)
 
   # download upstream tarball and extract it.
-  uscan --force-download
+  #uscan --force-download
 
   tar xf "../${package}_${version}.orig.tar.gz" -C ..
-  ln -sf  "$(pwd)/debian" "../${package}-${version}"
+  [[ -e "debian/watch-rename" ]] && debian/watch-rename $package $version
+  ln -sfT  "$(pwd)/debian" "../${package}-${version}/debian"
   cd "../${package}-${version}"
 
   debuild -i -us -uc -b
