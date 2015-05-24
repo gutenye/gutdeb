@@ -29,15 +29,14 @@ autopublish() {
   dir="$1"; oldpwd="$PWD"
   say "::BEGIN:: $dir"
   cd "$dir"
-  package=$(get_package); version=$(get_version)
-
-  if ! ret=$(uscan --report); then
-    say "it is already the latest version"
+  version=$(app-check)
+  debug "autopublish: app-check $version"
+  if [[ $version == "" ]]; then
+    say "it is already the latest version or there's an error"
   else
-    if [[ "$ret" =~ Newest\ version\ on\ remote\ site\ is\ ([-_.0-9]+) ]]; then
-      newversion=${BASH_REMATCH[1]}
-      app-publish "$newversion"
-    fi
+    say "found new version $version, begin to publish"
+    app-publish "$version"
+    #sleep 10
   fi
   cd $oldpwd
 }
