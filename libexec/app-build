@@ -15,7 +15,7 @@ main() {
   version=$(get_version)
 
   # download upstream tarball and extract it.
-  #uscan --force-download
+  uscan --force-download
 
   tar xf "../${package}_${version}.orig.tar.gz" -C ..
   [[ -e "debian/watch-rename" ]] && debian/watch-rename $package $version

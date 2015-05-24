@@ -44,5 +44,6 @@ autopublish() {
 if [[ "$1" == "" ]]; then
   main "."
 else
-  main "$@"
+  # not use "$@" for systemd service pass '*'
+  main $@
 fi
