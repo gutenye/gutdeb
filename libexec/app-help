@@ -12,7 +12,7 @@
 # The remainder of the comment block is displayed as extended
 # documentation.
 
-APP_COMMANDS="build source version"
+APP_COMMANDS="autopublish build check clean publish source upload version"
 
 set -e
 (( $DEBUG >= 3 )) && set -x
