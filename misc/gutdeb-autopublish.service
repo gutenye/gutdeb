@@ -1,0 +1,6 @@
+[Unit]
+Description=Gutdeb autopublish service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/gutdeb autopublish /app/debs/*
